@@ -9,7 +9,7 @@ export class UsuarioRepository extends DefaultCrudRepository<
   UsuarioRelations
 > {
   constructor(
-    @inject('datasources.Mongo') dataSource: MongoDataSource,
+    @inject('datasources.mongo') dataSource: MongoDataSource,
   ) {
     super(Usuario, dataSource);
   }

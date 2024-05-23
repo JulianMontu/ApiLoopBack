@@ -17,7 +17,7 @@ import axios from 'axios';
 import {Credenciales, Usuario} from '../models';
 import {UsuarioRepository} from '../repositories';
 import {AuthService} from '../services';
-@authenticate("admin")
+//@authenticate("admin")
 
 export class UsuarioController {
   constructor(

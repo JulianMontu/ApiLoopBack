@@ -18,7 +18,7 @@ export class ServicioRepository extends DefaultCrudRepository<
   public readonly destinoFk: BelongsToAccessor<Cliente, typeof Servicio.prototype.id>;
 
   constructor(
-    @inject('datasources.Mongo') dataSource: MongoDataSource, @repository.getter('EncomiendaRepository') protected encomiendaRepositoryGetter: Getter<EncomiendaRepository>, @repository.getter('ClienteRepository') protected clienteRepositoryGetter: Getter<ClienteRepository>,
+    @inject('datasources.mongo') dataSource: MongoDataSource, @repository.getter('EncomiendaRepository') protected encomiendaRepositoryGetter: Getter<EncomiendaRepository>, @repository.getter('ClienteRepository') protected clienteRepositoryGetter: Getter<ClienteRepository>,
   ) {
     super(Servicio, dataSource);
     this.destinoFk = this.createBelongsToAccessorFor('destinoFk', clienteRepositoryGetter,);

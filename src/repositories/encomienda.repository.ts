@@ -9,7 +9,7 @@ export class EncomiendaRepository extends DefaultCrudRepository<
   EncomiendaRelations
 > {
   constructor(
-    @inject('datasources.Mongo') dataSource: MongoDataSource,
+    @inject('datasources.mongo') dataSource: MongoDataSource,
   ) {
     super(Encomienda, dataSource);
   }
