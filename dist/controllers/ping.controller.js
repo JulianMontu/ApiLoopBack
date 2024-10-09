@@ -34,7 +34,6 @@ const PING_RESPONSE = {
  * A simple controller to bounce back http requests
  */
 let PingController = class PingController {
-    req;
     constructor(req) {
         this.req = req;
     }

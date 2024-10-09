@@ -6,13 +6,6 @@ const repository_1 = require("@loopback/repository");
 const encomienda_model_1 = require("./encomienda.model");
 const cliente_model_1 = require("./cliente.model");
 let Servicio = class Servicio extends repository_1.Entity {
-    id;
-    fecha;
-    hora;
-    valor;
-    encomiendaId;
-    origen;
-    destino;
     constructor(data) {
         super(data);
     }

@@ -4,16 +4,6 @@ exports.Cliente = void 0;
 const tslib_1 = require("tslib");
 const repository_1 = require("@loopback/repository");
 let Cliente = class Cliente extends repository_1.Entity {
-    id;
-    cedula;
-    nombre;
-    apellido;
-    pais;
-    ciudad;
-    departamento;
-    direccion;
-    telefono;
-    email;
     constructor(data) {
         super(data);
     }

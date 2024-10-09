@@ -7,10 +7,9 @@ const rest_1 = require("@loopback/rest");
 const parse_bearer_token_1 = tslib_1.__importDefault(require("parse-bearer-token"));
 const services_1 = require("../services");
 let AdministradorStrategy = class AdministradorStrategy {
-    serviceAuth;
-    name = 'admin';
     constructor(serviceAuth) {
         this.serviceAuth = serviceAuth;
+        this.name = 'admin';
     }
     async authenticate(request) {
         const token = (0, parse_bearer_token_1.default)(request);

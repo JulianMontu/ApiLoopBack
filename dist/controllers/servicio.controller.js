@@ -7,7 +7,6 @@ const rest_1 = require("@loopback/rest");
 const models_1 = require("../models");
 const repositories_1 = require("../repositories");
 let ServicioController = class ServicioController {
-    servicioRepository;
     constructor(servicioRepository) {
         this.servicioRepository = servicioRepository;
     }
