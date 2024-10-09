@@ -4,21 +4,20 @@ exports.MongoDataSource = void 0;
 const tslib_1 = require("tslib");
 const core_1 = require("@loopback/core");
 const repository_1 = require("@loopback/repository");
+// Configuración del datasource MongoDB
 const config = {
     name: 'mongo',
     connector: 'mongodb',
     url: 'mongodb+srv://pos_test:DoUkMVzOYjEiUWky@pos.osekwof.mongodb.net/pos?retryWrites=true&w=majority&appName=pos',
+    // Las siguientes propiedades no son necesarias si se usa la URL completa
     host: '',
     port: 0,
     user: '',
     password: '',
     database: '',
-    useNewUrlParser: true
+    useNewUrlParser: true,
 };
-// Observe application's life cycle to disconnect the datasource when
-// application is stopped. This allows the application to be shut down
-// gracefully. The `stop()` method is inherited from `juggler.DataSource`.
-// Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
+// Observador del ciclo de vida para desconectar el datasource al detener la aplicación
 let MongoDataSource = class MongoDataSource extends repository_1.juggler.DataSource {
     static dataSourceName = 'mongo';
     static defaultConfig = config;
