@@ -7,7 +7,7 @@ const repository_1 = require("@loopback/repository");
 const config = {
     name: 'mongo',
     connector: 'mongodb',
-    url: 'mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/<base_de_datos>?retryWrites=true&w=majority&appName=<nombre_app>',
+    url: 'mongodb+srv://pos_test:DoUkMVzOYjEiUWky@pos.osekwof.mongodb.net/pos?retryWrites=true&w=majority&appName=pos',
     useNewUrlParser: true,
 };
 // Observe application's life cycle to disconnect the datasource when
