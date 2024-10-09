@@ -12,6 +12,7 @@
     "node": ">=10.16"
   },
   "scripts": {
+    "postinstall": "npm install",
     "build": "npm run clean && lb-tsc",
     "build:watch": "lb-tsc --watch",
     "lint": "npm run eslint && npm run prettier:check",
