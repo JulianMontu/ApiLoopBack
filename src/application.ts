@@ -1,18 +1,19 @@
-import {AuthenticationComponent, registerAuthenticationStrategy} from '@loopback/authentication';
-import {BootMixin} from '@loopback/boot';
-import {ApplicationConfig} from '@loopback/core';
-import {RepositoryMixin} from '@loopback/repository';
-import {RestApplication} from '@loopback/rest';
+import { AuthenticationComponent, registerAuthenticationStrategy } from '@loopback/authentication';
+import { BootMixin } from '@loopback/boot';
+import { ApplicationConfig } from '@loopback/core';
+import { RepositoryMixin } from '@loopback/repository';
+import { RestApplication } from '@loopback/rest';
 import {
   RestExplorerBindings,
   RestExplorerComponent
 } from '@loopback/rest-explorer';
-import {ServiceMixin} from '@loopback/service-proxy';
+import { ServiceMixin } from '@loopback/service-proxy';
 import path from 'path';
-import {MySequence} from './sequence';
-import {AdministradorStrategy} from './strategies/admin.strategy';
+import { MySequence } from './sequence';
+import { AdministradorStrategy } from './strategies/admin.strategy';
+import { MongoDataSource } from './datasources'; // Asegúrate de que la ruta sea correcta
 
-export {ApplicationConfig};
+export { ApplicationConfig };
 
 export class Apiloopback27Application extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
@@ -42,9 +43,12 @@ export class Apiloopback27Application extends BootMixin(
         nested: true,
       },
     };
-//Registramos la estrategia
-registerAuthenticationStrategy(this, AdministradorStrategy);
-this.component(AuthenticationComponent);
 
+    // Registra la fuente de datos MongoDB
+    this.dataSource(MongoDataSource);
+
+    // Registra la estrategia
+    registerAuthenticationStrategy(this, AdministradorStrategy);
+    this.component(AuthenticationComponent);
   }
 }
