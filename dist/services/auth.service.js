@@ -11,6 +11,7 @@ const generator = require("password-generator");
 const cryptoJS = require("crypto-js");
 const jwt = require('jsonwebtoken');
 let AuthService = class AuthService {
+    usuarioRepository;
     constructor(usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
@@ -54,7 +55,7 @@ let AuthService = class AuthService {
             }
             return false;
         }
-        catch (_a) {
+        catch {
             return false;
         }
     }

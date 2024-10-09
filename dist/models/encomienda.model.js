@@ -4,6 +4,11 @@ exports.Encomienda = void 0;
 const tslib_1 = require("tslib");
 const repository_1 = require("@loopback/repository");
 let Encomienda = class Encomienda extends repository_1.Entity {
+    id;
+    descripcion;
+    peso;
+    tipo;
+    presentacion;
     constructor(data) {
         super(data);
     }

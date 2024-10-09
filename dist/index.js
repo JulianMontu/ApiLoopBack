@@ -1,5 +1,4 @@
 "use strict";
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const application_1 = require("./application");
@@ -19,7 +18,7 @@ exports.default = main;
 if (require.main === module) {
     const config = {
         rest: {
-            port: +((_a = process.env.PORT) !== null && _a !== void 0 ? _a : 3000),
+            port: +(process.env.PORT ?? 3000),
             host: process.env.HOST,
             gracePeriodForClose: 5000,
             openApiSpec: {

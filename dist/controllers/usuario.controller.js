@@ -12,6 +12,8 @@ const repositories_1 = require("../repositories");
 const services_1 = require("../services");
 //@authenticate("admin")
 let UsuarioController = class UsuarioController {
+    usuarioRepository;
+    servicioAuth;
     constructor(usuarioRepository, servicioAuth) {
         this.usuarioRepository = usuarioRepository;
         this.servicioAuth = servicioAuth;

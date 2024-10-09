@@ -4,6 +4,8 @@ exports.Credenciales = void 0;
 const tslib_1 = require("tslib");
 const repository_1 = require("@loopback/repository");
 let Credenciales = class Credenciales extends repository_1.Model {
+    usuario;
+    password;
     constructor(data) {
         super(data);
     }

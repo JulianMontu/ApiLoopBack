@@ -7,6 +7,11 @@ const repository_1 = require("@loopback/repository");
 const datasources_1 = require("../datasources");
 const models_1 = require("../models");
 let ServicioRepository = class ServicioRepository extends repository_1.DefaultCrudRepository {
+    encomiendaRepositoryGetter;
+    clienteRepositoryGetter;
+    encomienda;
+    origenFk;
+    destinoFk;
     constructor(dataSource, encomiendaRepositoryGetter, clienteRepositoryGetter) {
         super(models_1.Servicio, dataSource);
         this.encomiendaRepositoryGetter = encomiendaRepositoryGetter;

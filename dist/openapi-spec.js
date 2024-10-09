@@ -5,14 +5,13 @@ const application_1 = require("./application");
  * Export the OpenAPI spec from the application
  */
 async function exportOpenApiSpec() {
-    var _a, _b, _c;
     const config = {
         rest: {
-            port: +((_a = process.env.PORT) !== null && _a !== void 0 ? _a : 3000),
-            host: (_b = process.env.HOST) !== null && _b !== void 0 ? _b : 'localhost',
+            port: +(process.env.PORT ?? 3000),
+            host: process.env.HOST ?? 'localhost',
         },
     };
-    const outFile = (_c = process.argv[2]) !== null && _c !== void 0 ? _c : '';
+    const outFile = process.argv[2] ?? '';
     const app = new application_1.Apiloopback27Application(config);
     await app.boot();
     await app.exportOpenApiSpec(outFile);
